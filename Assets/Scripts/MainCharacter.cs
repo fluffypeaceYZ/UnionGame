@@ -11,15 +11,15 @@ public class MainCharacter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.A)) {
+		if (Input.GetKey (KeyCode.W)) {
 		 
 			GetComponent<Animation>().Play ();
 		
 		}
 
-		if (Input.GetMouseButtonDown) {
+		if (Input.GetMouseButtonDown(0)) {
 
-			GetComponent<Animation>().Play ();
+			GetComponent<Animation>().Play ("attack_2");
 
 		}
 	

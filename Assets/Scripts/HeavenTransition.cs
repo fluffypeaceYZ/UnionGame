@@ -16,7 +16,7 @@ public class HeavenTransition : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other){
 
-		Application.LoadLevel("Heaven");
+		SceneManager.LoadScene("Heaven");
 
 	}
 }

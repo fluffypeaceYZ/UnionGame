@@ -3,38 +3,22 @@ using System.Collections;
 
 public class DoorTrigger1 : MonoBehaviour {
 
-	public GameObject Wall;
+    public GameObject ThisTrigger;
+    public GameObject OtherTrigger;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start () {
+    }
 
-	void OnTriggerStay (Collider other)
-	{
-
-		if (other.gameObject.tag == "Player") {
-
-			transform.position -= new Vector3 (0, 5, 0) * Time.deltaTime*5;
-			 
-
-		}
-
-	}
+    // Update is called once per frame
+    void Update() {
+    }
 
 	void OnTriggerEnter (Collider other)
 	{
-
 		if (other.gameObject.tag == "Player") {
-
-			Wall.transform.position += new Vector3 (0,500, 0);
-
-		}
-
+            ThisTrigger.GetComponent<UpOrDown>().ThisTriggerIsUp = false;
+            OtherTrigger.GetComponent<UpOrDown>().ThisTriggerIsUp = true;
+        }
 	}
 }

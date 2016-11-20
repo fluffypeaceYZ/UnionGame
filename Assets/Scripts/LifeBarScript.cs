@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class LifeBarScript : MonoBehaviour {
 	public Sprite[] healthBarArray;
 	public Image healthBar;
+	public Text HealthKits;
+	int NumberofKits = 0;
 	private int healthBarCount = 10;
 	// Use this for initialization
 	void Start () {
@@ -21,5 +23,16 @@ public class LifeBarScript : MonoBehaviour {
 		
 		}
 	
+	}
+
+
+	void OnTriggerEnter (Collider other){
+
+		if (other.gameObject.tag == "Health")
+		{
+			NumberofKits+=1;
+			HealthKits.text = NumberofKits.ToString();
+			Destroy (other.gameObject,1);
+		}
 	}
 }

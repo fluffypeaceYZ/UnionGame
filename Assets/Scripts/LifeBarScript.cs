@@ -22,6 +22,14 @@ public class LifeBarScript : MonoBehaviour {
 			healthBar.sprite = healthBarArray [healthBarCount];
 		
 		}
+
+		if (Input.GetKeyDown (KeyCode.H) && NumberofKits>=1){
+
+			NumberofKits-=1;
+			HealthKits.text = NumberofKits.ToString();
+			healthBarCount = 10;
+			healthBar.sprite = healthBarArray[healthBarCount];
+		}
 	
 	}
 
